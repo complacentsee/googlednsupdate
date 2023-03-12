@@ -1,6 +1,7 @@
 # Google Cloud SDK configuration variables
-ZONE_NAME=my-zone
-RECORD_NAME=my-record
-#SERVICE_ACCOUNT_FILE=/
-#TTL=300
-#CHECK_INTERVAL=1600
+PROJECT_ID=my-GoogleCloudProjectID    #The ProjectID that the script should run against
+ZONE_NAME=my-zone                     #The name of your DNS Zone
+RECORD_NAME=my-record                 #The name of our A record
+#SERVICE_ACCOUNT_FILE=/		      #Optional, you can specify an explicit path to a service account file.
+#TTL=300                              #Optional, can you specify an explicit TTL
+#CHECK_INTERVAL=1600                  #Optional, can you specify an explicit delay beteen checks. 

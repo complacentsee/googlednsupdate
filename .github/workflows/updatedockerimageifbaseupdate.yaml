@@ -1,0 +1,23 @@
+name: Update Docker image if base google image is updated. 
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  check-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check Docker image
+        uses: docker/metadata-action@v3
+        with:
+          images: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:alpine'
+        
+      - name: Build Docker Image
+        if: ${{ steps.docker.outputs.changed == 'true' }}
+        uses: ./buildandpushdockerimage.yaml
+
