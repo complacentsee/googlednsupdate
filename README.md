@@ -1,4 +1,4 @@
-[![Build Docker Image](https://github.com/complacentsee/googlednsupdate/actions/workflows/buildandpushdockerimage.yaml/badge.svg)](https://github.com/complacentsee/googlednsupdate/actions/workflows/buildandpushdockerimage.yaml)
+[![Build Docker Image](https://github.com/complacentsee/googlednsupdate/actions/workflows/buildandpushdockerimage.yaml/badge.svg)](https://github.com/complacentsee/googlednsupdate/actions/workflows/buildandpushdockerimage.yaml)  [![Build Docker Image](https://github.com/complacentsee/googlednsupdate/actions/workflows/updatedockerimageifbaseupdate.yaml/badge.svg)](https://github.com/complacentsee/googlednsupdate/actions/workflows/updatedockerimageifbaseupdate.yaml)
 
 ## Quick Start
 
