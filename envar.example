@@ -1,0 +1,6 @@
+# Google Cloud SDK configuration variables
+ZONE_NAME=my-zone
+RECORD_NAME=my-record
+#SERVICE_ACCOUNT_FILE=/
+#TTL=300
+#CHECK_INTERVAL=1600
