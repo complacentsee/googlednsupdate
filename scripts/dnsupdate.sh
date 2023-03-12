@@ -47,7 +47,7 @@ while true; do
     echo "IP address has changed. Updating DNS record."
     # Update Google Cloud DNS A record
     gcloud dns record-sets transaction start --zone="$ZONE_NAME"
-    gcloud dns record-sets transaction remove --name="$RECORD_NAME" --ttl="$TTL" --type=A --zone="$ZONE_NAME" --rrdatas="$CURRENT_IP"
+    gcloud dns record-sets transaction remove --name="$RECORD_NAME" --ttl="$TTL" --type=A --zone="$ZONE_NAME" "$CURRENT_IP"
     gcloud dns record-sets transaction add "$PUBLIC_IP" --name="$RECORD_NAME" --ttl="$TTL" --type=A --zone="$ZONE_NAME"
     gcloud dns record-sets transaction execute --zone="$ZONE_NAME"
   else
