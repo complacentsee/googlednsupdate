@@ -1,3 +1,5 @@
+[![Build Docker Image](https://github.com/complacentsee/googlednsupdate/actions/workflows/buildandpushdockerimage.yaml/badge.svg)](https://github.com/complacentsee/googlednsupdate/actions/workflows/buildandpushdockerimage.yaml)
+
 ## Quick Start
 
 This container will check your current IP address and update a Google Cloud DNS record if needed.
