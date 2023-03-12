@@ -13,7 +13,7 @@ jobs:
       - name: Get Docker Image Metadata
         uses: docker/metadata-action@v4
         with:
-          images: 'your-docker-image:tag'
+          images: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:alpine'
           clear-cache: true
       - name: Display Docker Image Metadata
         run: |
