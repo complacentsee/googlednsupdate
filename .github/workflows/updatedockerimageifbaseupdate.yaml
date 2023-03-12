@@ -4,20 +4,18 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
-
 jobs:
-  check-docker-image:
+  docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Check Docker image
-        uses: docker/metadata-action@v4
+      - name: Check base image has updated beyond our image
+        id: check
+        uses: twiddler/is-my-docker-parent-image-out-of-date@v1
         with:
-          images: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:alpine'
-        
+          parent-image: "gcr.io/google.com/cloudsdktool/google-cloud-cli:alpine"
+          my-image: "docker.io/complacentsee/googlednsupdate"
+
       - name: Build Docker Image
-        if: ${{ steps.docker.outputs.changed == 'true' }}
+        if: steps.check.outputs.out-of-date == 'true'
         uses: ./buildandpushdockerimage.yaml
 
