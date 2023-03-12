@@ -5,8 +5,11 @@ This conatainer will check your current IP address and update a google cloud DNS
 Run the container with the following command:
 
 ```
-$ docker run --env-file envar \
-    -v "$(pwd)/credentials:/scripts/serviceaccounts" \ 
-    googlednsupdate
+docker run \
+  --env-file envar \
+  --volume "$(pwd)/credentials:/scripts/serviceaccounts" \
+  --detach \
+  --name googleupdatedns \
+  complacentsee/googlednsupdate
 ```
 
