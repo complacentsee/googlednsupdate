@@ -8,6 +8,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
       - name: Check base image has updated beyond our image
         id: check
         uses: twiddler/is-my-docker-parent-image-out-of-date@v1
