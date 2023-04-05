@@ -17,5 +17,5 @@ jobs:
 
       - name: Build Docker Image
         if: steps.check.outputs.out-of-date == 'true'
-        uses: ./.github/workflows/buildandpushdockerimage.yaml
+        uses: ./.github/actions/buildandpushdockerimage
 
